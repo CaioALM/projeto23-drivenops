@@ -1,7 +1,7 @@
 services:
   postgres_drivenops_db:
     image: postgres
-    container_name: postgresgres_drivenops_db
+    container_name: postgres_drivenops_db
     restart:  always
     ports:
       - 4444:5432
@@ -17,9 +17,9 @@ services:
     ports:
       - 5000:5000
     depends_on:
-      - postgresgres_drivenops_db
+      - postgres_drivenops_db
     env_file:
-      - ./back-end/ .env
+      - ./back-end/.env
 
   react_drivenops_app:
     container_name: react_drivenops_app
